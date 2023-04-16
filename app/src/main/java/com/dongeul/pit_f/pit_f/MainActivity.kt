@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.dongeul.pit_f.pit_f.presentation.Screen
+import com.dongeul.pit_f.pit_f.presentation.weather_main.WeatherMainScreen
 import com.dongeul.pit_f.ui.theme.Pit_fTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -34,24 +35,11 @@ class MainActivity : ComponentActivity() {
                         startDestination = Screen.WeatherMainScreen.route
                     ) {
                         composable(route = Screen.WeatherMainScreen.route){
-
+                            WeatherMainScreen(navController = navController)
                         }
                     }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    Pit_fTheme {
-        Greeting("Android")
     }
 }

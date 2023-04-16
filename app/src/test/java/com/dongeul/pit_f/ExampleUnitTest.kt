@@ -1,5 +1,7 @@
 package com.dongeul.pit_f
 
+import android.util.Log
+import org.junit.Assert
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,6 +14,11 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        assertEquals("2023-04-16","2023-04-16 12:00:00".removeDateTime())
+
     }
+}
+
+fun String.removeDateTime():String {
+    return substring(startIndex = 0, endIndex = this.indexOf(" "))
 }
