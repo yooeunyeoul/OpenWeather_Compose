@@ -7,13 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.dongeul.pit_f.pit_f.common.Resource
 import com.dongeul.pit_f.pit_f.domain.use_case.get_weather.GetWeatherUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import java.time.LocalDate
-import java.time.LocalDateTime
 import javax.inject.Inject
 
 @HiltViewModel

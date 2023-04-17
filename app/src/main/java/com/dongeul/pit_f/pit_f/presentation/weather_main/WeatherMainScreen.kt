@@ -26,15 +26,10 @@ fun WeatherMainScreen(
     viewModel: WeatherMainViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
-    val scrollState = rememberScrollState()
 
     Box(Modifier.fillMaxSize()) {
 
         LazyColumn(Modifier.fillMaxWidth()) {
-
-            item {
-
-            }
             state.weatherList?.forEach {
                 item {
                     WeatherHeaderScreen(headerName = it.cityName)
