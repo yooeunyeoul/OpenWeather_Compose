@@ -39,6 +39,23 @@ class ExampleUnitTest {
         println(date.monthValue.getMonthString())
     }
 
+    @Test
+    fun `날짜출력 해보자`() {
+        val time = "2023-04-18"
+        var resultText= ""
+        resultText = if (checkIsToday(time)) {
+            "Today"
+        }else if (checkIsTomorrow(time)) {
+            "Tomorrow"
+        } else {
+            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+            val date = LocalDate.parse("2023-04-20", formatter)
+
+            "${date.dayOfWeek.value.getDayOfWeekString()} ${date.dayOfMonth} ${date.monthValue.getMonthString()}"
+        }
+        println(resultText)
+    }
+
 }
 
 fun checkIsToday(dateTime: String): Boolean {

@@ -16,12 +16,14 @@ import androidx.navigation.compose.rememberNavController
 import com.dongeul.pit_f.pit_f.presentation.Screen
 import com.dongeul.pit_f.pit_f.presentation.weather_main.WeatherMainScreen
 import com.dongeul.pit_f.ui.theme.Pit_fTheme
+import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AndroidThreeTen.init(this)
         setContent {
             Pit_fTheme {
                 // A surface container using the 'background' color from the theme

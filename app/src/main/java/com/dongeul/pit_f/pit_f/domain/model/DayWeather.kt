@@ -3,7 +3,10 @@ package com.dongeul.pit_f.pit_f.domain.model
 import androidx.annotation.DrawableRes
 import com.dongeul.pit_f.R
 import com.dongeul.pit_f.pit_f.data.data_source.remote.dto.WeatherDataDto
+import com.dongeul.pit_f.pit_f.domain.util.removeDateTime
 import org.threeten.bp.LocalDateTime
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
 
 data class DayWeather(
@@ -41,15 +44,4 @@ fun WeatherDataDto.toDayWeather(): DayWeather {
     )
 }
 
-fun getDisplayDate(date: String): String {
-    val parsedDate = LocalDateTime.parse(date)
-    return "${parsedDate.dayOfWeek}${parsedDate.month}${parsedDate.dayOfMonth}"
-}
-
-fun String.removeDateTime(): String {
-    if (this.isNullOrEmpty()) {
-        return ""
-    }
-    return substring(startIndex = 0, endIndex = this.indexOf(" "))
-}
 

@@ -23,14 +23,11 @@ class WeatherMainViewModel @Inject constructor(
 
     init {
         getWeathers(cityNameList = cityNameList)
-
     }
 
     private fun getWeathers(cityNameList: List<String>) {
         getWeatherUseCase(cityNameList = cityNameList).onEach { result ->
             when (result) {
-
-
                 is Resource.Success -> {
                     _state.value = state.value.copy(
                         weatherList = result.data ?: emptyList(),
